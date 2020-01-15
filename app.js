@@ -1,10 +1,14 @@
 function createToDoListItem() {
   const input = document.querySelector("input[type=text]");
+
+  if (!input.value) {
+    return;
+  }
+  
   const li = document.createElement("li")
   li.textContent = input.value
   const ul = document.querySelector("ul")
   ul.appendChild(li)
-  alert(`Added Task: ${input.value}`);
   input.value = ""
 }
 
